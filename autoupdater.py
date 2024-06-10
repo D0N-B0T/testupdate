@@ -16,7 +16,7 @@ def get_latest_version(repo_url):
 
     """
 
-    latest_file_url = f"{repo_url}/raw/main/autoupdate.py"  # Asegúrate de que esta URL apunta al archivo correcto
+    latest_file_url = f"{repo_url}/raw/main/autoupdater.py"  # Asegúrate de que esta URL apunta al archivo correcto
 
     try:
 
