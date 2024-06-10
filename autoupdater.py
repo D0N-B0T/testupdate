@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+
 import os
 import sys
 import subprocess
@@ -7,7 +10,7 @@ def get_latest_version(repo_url):
     """
     Descarga el archivo más reciente del repositorio de GitHub.
     """
-    latest_file_url = f"{repo_url}/raw/main/script.py"  # Asegúrate de que esta URL apunta al archivo correcto
+    latest_file_url = f"{repo_url}/raw/main/autoupdater.py"  # Asegúrate de que esta URL apunta al archivo correcto
     try:
         response = urllib.request.urlopen(latest_file_url)
         latest_script = response.read().decode('utf-8')
@@ -22,7 +25,7 @@ def update_script(latest_script):
     """
     current_file = os.path.realpath(__file__)
     try:
-        with open(current_file, 'w') as file:
+        with open(current_file, 'w', encoding='utf-8') as file:
             file.write(latest_script)
         print("Script actualizado con éxito.")
     except Exception as e:
